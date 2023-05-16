@@ -9,6 +9,7 @@ target 'Carrefour' do
 
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'Alamofire'
 
   target 'CarrefourTests' do
     inherit! :search_paths

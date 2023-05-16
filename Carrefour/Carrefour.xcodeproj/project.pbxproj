@@ -10,14 +10,24 @@
 		12D006340A1B404F9919ECA3 /* Pods_Carrefour_CarrefourUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B849050078AFC17F6F30600 /* Pods_Carrefour_CarrefourUITests.framework */; };
 		8F8FDFF3C6D302B162606295 /* Pods_Carrefour.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A560FDECCFF7C116D0A4BA90 /* Pods_Carrefour.framework */; };
 		B86861CA15762618842BB1BF /* Pods_CarrefourTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB605E9DA71F3316784AA6CF /* Pods_CarrefourTests.framework */; };
-		D6EF0FFC2A12D3F4008C384F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF0FFB2A12D3F4008C384F /* AppDelegate.swift */; };
-		D6EF0FFE2A12D3F4008C384F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF0FFD2A12D3F4008C384F /* SceneDelegate.swift */; };
-		D6EF10002A12D3F4008C384F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF0FFF2A12D3F4008C384F /* ViewController.swift */; };
+		D6EF10002A12D3F4008C384F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF0FFF2A12D3F4008C384F /* MainViewController.swift */; };
 		D6EF10052A12D3F5008C384F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6EF10042A12D3F5008C384F /* Assets.xcassets */; };
 		D6EF10082A12D3F5008C384F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6EF10062A12D3F5008C384F /* LaunchScreen.storyboard */; };
 		D6EF10132A12D3F5008C384F /* CarrefourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF10122A12D3F5008C384F /* CarrefourTests.swift */; };
 		D6EF101D2A12D3F5008C384F /* CarrefourUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF101C2A12D3F5008C384F /* CarrefourUITests.swift */; };
 		D6EF101F2A12D3F5008C384F /* CarrefourUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6EF101E2A12D3F5008C384F /* CarrefourUITestsLaunchTests.swift */; };
+		D6F8911B2A13C34200EB44E2 /* AppDelegate+Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8911A2A13C34200EB44E2 /* AppDelegate+Launch.swift */; };
+		D6F891222A13C4FC00EB44E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891212A13C4FC00EB44E2 /* AppDelegate.swift */; };
+		D6F891242A13C5F200EB44E2 /* InitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891232A13C5F200EB44E2 /* InitCoordinator.swift */; };
+		D6F891262A13C62300EB44E2 /* InitCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891252A13C62300EB44E2 /* InitCoordinatorProtocol.swift */; };
+		D6F891282A13C64700EB44E2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891272A13C64700EB44E2 /* Coordinator.swift */; };
+		D6F8912B2A13C6EA00EB44E2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8912A2A13C6EA00EB44E2 /* MainCoordinator.swift */; };
+		D6F8912E2A13C88500EB44E2 /* UIKit+UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8912D2A13C88500EB44E2 /* UIKit+UIWindow.swift */; };
+		D6F891312A13C93500EB44E2 /* HomeCoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891302A13C93500EB44E2 /* HomeCoordinatorProtocol.swift */; };
+		D6F891392A14087400EB44E2 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891382A14087400EB44E2 /* CoordinatorFactory.swift */; };
+		D6F8913C2A14258500EB44E2 /* OverlayLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8913B2A14258500EB44E2 /* OverlayLoadingView.swift */; };
+		D6F891402A14260800EB44E2 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8913F2A14260800EB44E2 /* ViewCodeProtocol.swift */; };
+		D6F891432A142D1300EB44E2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891422A142D1300EB44E2 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +58,7 @@
 		D0C237B98F79B600837D37B7 /* Pods-Carrefour.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carrefour.release.xcconfig"; path = "Target Support Files/Pods-Carrefour/Pods-Carrefour.release.xcconfig"; sourceTree = "<group>"; };
 		D1CC1621B6114391863EBDD1 /* Pods-Carrefour-CarrefourUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Carrefour-CarrefourUITests.release.xcconfig"; path = "Target Support Files/Pods-Carrefour-CarrefourUITests/Pods-Carrefour-CarrefourUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D6EF0FF82A12D3F4008C384F /* Carrefour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carrefour.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6EF0FFB2A12D3F4008C384F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D6EF0FFD2A12D3F4008C384F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D6EF0FFF2A12D3F4008C384F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D6EF0FFF2A12D3F4008C384F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D6EF10042A12D3F5008C384F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6EF10072A12D3F5008C384F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6EF10092A12D3F5008C384F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +67,18 @@
 		D6EF10182A12D3F5008C384F /* CarrefourUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarrefourUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6EF101C2A12D3F5008C384F /* CarrefourUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrefourUITests.swift; sourceTree = "<group>"; };
 		D6EF101E2A12D3F5008C384F /* CarrefourUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrefourUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6F8911A2A13C34200EB44E2 /* AppDelegate+Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Launch.swift"; sourceTree = "<group>"; };
+		D6F891212A13C4FC00EB44E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D6F891232A13C5F200EB44E2 /* InitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCoordinator.swift; sourceTree = "<group>"; };
+		D6F891252A13C62300EB44E2 /* InitCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D6F891272A13C64700EB44E2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D6F8912A2A13C6EA00EB44E2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		D6F8912D2A13C88500EB44E2 /* UIKit+UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+UIWindow.swift"; sourceTree = "<group>"; };
+		D6F891302A13C93500EB44E2 /* HomeCoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D6F891382A14087400EB44E2 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		D6F8913B2A14258500EB44E2 /* OverlayLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayLoadingView.swift; sourceTree = "<group>"; };
+		D6F8913F2A14260800EB44E2 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		D6F891422A142D1300EB44E2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +132,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D66494EE2A12DBEC009FA57D /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8912F2A13C92600EB44E2 /* Home */,
+				D6F891292A13C65200EB44E2 /* Main */,
+				D6F891232A13C5F200EB44E2 /* InitCoordinator.swift */,
+				D6F891252A13C62300EB44E2 /* InitCoordinatorProtocol.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		D6EF0FEF2A12D3F4008C384F = {
 			isa = PBXGroup;
 			children = (
@@ -137,10 +168,17 @@
 		D6EF0FFA2A12D3F4008C384F /* Carrefour */ = {
 			isa = PBXGroup;
 			children = (
-				D6EF0FFB2A12D3F4008C384F /* AppDelegate.swift */,
-				D6EF0FFD2A12D3F4008C384F /* SceneDelegate.swift */,
-				D6EF0FFF2A12D3F4008C384F /* ViewController.swift */,
-				D6EF10062A12D3F5008C384F /* LaunchScreen.storyboard */,
+				D6F891412A142D0600EB44E2 /* Extensions */,
+				D6F8913D2A1425FA00EB44E2 /* View */,
+				D6F8913A2A14257D00EB44E2 /* Other */,
+				D6F891372A14086A00EB44E2 /* Factory */,
+				D6F8912C2A13C86700EB44E2 /* UIKit */,
+				D6F891202A13C3F700EB44E2 /* XIB */,
+				D6F8911F2A13C3CD00EB44E2 /* Model */,
+				D6F8911E2A13C3C600EB44E2 /* ViewModel */,
+				D6F8911D2A13C3BF00EB44E2 /* Controller */,
+				D66494EE2A12DBEC009FA57D /* Coordinator */,
+				D6F891192A13C33000EB44E2 /* AppDelegate */,
 				D6EF10042A12D3F5008C384F /* Assets.xcassets */,
 				D6EF10092A12D3F5008C384F /* Info.plist */,
 			);
@@ -162,6 +200,110 @@
 				D6EF101E2A12D3F5008C384F /* CarrefourUITestsLaunchTests.swift */,
 			);
 			path = CarrefourUITests;
+			sourceTree = "<group>";
+		};
+		D6F891192A13C33000EB44E2 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8911A2A13C34200EB44E2 /* AppDelegate+Launch.swift */,
+				D6F891212A13C4FC00EB44E2 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D6F8911D2A13C3BF00EB44E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D6EF0FFF2A12D3F4008C384F /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D6F8911E2A13C3C600EB44E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D6F8911F2A13C3CD00EB44E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6F891202A13C3F700EB44E2 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				D6EF10062A12D3F5008C384F /* LaunchScreen.storyboard */,
+			);
+			path = XIB;
+			sourceTree = "<group>";
+		};
+		D6F891292A13C65200EB44E2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D6F891272A13C64700EB44E2 /* Coordinator.swift */,
+				D6F8912A2A13C6EA00EB44E2 /* MainCoordinator.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D6F8912C2A13C86700EB44E2 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8912D2A13C88500EB44E2 /* UIKit+UIWindow.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		D6F8912F2A13C92600EB44E2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D6F891302A13C93500EB44E2 /* HomeCoordinatorProtocol.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D6F891372A14086A00EB44E2 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D6F891382A14087400EB44E2 /* CoordinatorFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D6F8913A2A14257D00EB44E2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8913B2A14258500EB44E2 /* OverlayLoadingView.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		D6F8913D2A1425FA00EB44E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8913E2A1425FF00EB44E2 /* Protocol */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D6F8913E2A1425FF00EB44E2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8913F2A14260800EB44E2 /* ViewCodeProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D6F891412A142D0600EB44E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D6F891422A142D1300EB44E2 /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,9 +562,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6EF10002A12D3F4008C384F /* ViewController.swift in Sources */,
-				D6EF0FFC2A12D3F4008C384F /* AppDelegate.swift in Sources */,
-				D6EF0FFE2A12D3F4008C384F /* SceneDelegate.swift in Sources */,
+				D6F891432A142D1300EB44E2 /* UIView+Extensions.swift in Sources */,
+				D6F891262A13C62300EB44E2 /* InitCoordinatorProtocol.swift in Sources */,
+				D6F8912B2A13C6EA00EB44E2 /* MainCoordinator.swift in Sources */,
+				D6F891242A13C5F200EB44E2 /* InitCoordinator.swift in Sources */,
+				D6F891222A13C4FC00EB44E2 /* AppDelegate.swift in Sources */,
+				D6F891402A14260800EB44E2 /* ViewCodeProtocol.swift in Sources */,
+				D6F8912E2A13C88500EB44E2 /* UIKit+UIWindow.swift in Sources */,
+				D6F891312A13C93500EB44E2 /* HomeCoordinatorProtocol.swift in Sources */,
+				D6EF10002A12D3F4008C384F /* MainViewController.swift in Sources */,
+				D6F8911B2A13C34200EB44E2 /* AppDelegate+Launch.swift in Sources */,
+				D6F8913C2A14258500EB44E2 /* OverlayLoadingView.swift in Sources */,
+				D6F891392A14087400EB44E2 /* CoordinatorFactory.swift in Sources */,
+				D6F891282A13C64700EB44E2 /* Coordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,7 +747,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Carrefour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -623,7 +775,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Carrefour/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
