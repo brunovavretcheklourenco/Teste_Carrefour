@@ -41,7 +41,7 @@ class GitHubAPI: GitHubAPIProtocol {
         let parameters: [String: Any] = [
             "q": query
         ]
-
+        
         session.request(url, parameters: parameters).responseDecodable(of: SearchResult.self) { response in
             switch response.result {
             case .success(let result):
