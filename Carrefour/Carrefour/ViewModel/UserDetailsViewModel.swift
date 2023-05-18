@@ -11,24 +11,24 @@ import UIKit
 class UserDetailsViewModel {
     private let user: User
     
-    var nameText: NSAttributedString {
-        let nameText = NSMutableAttributedString(string: "Name: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        if let name = user.name {
-            nameText.append(NSAttributedString(string: name))
+    var nameText: String {
+        return user.name ?? ""
+    }
+    
+    var avatar: String? {
+        guard let avatar = user.avatar_url else {
+            return nil
         }
-        return nameText
+        return avatar
     }
     
-    var followersText: NSAttributedString {
-        let followersText = NSMutableAttributedString(string: "Followers: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        followersText.append(NSAttributedString(string: "\(user.followers ?? 0)"))
-        return followersText
+    var followers: Int {
+        return user.followers ?? 0
     }
+
     
-    var followingText: NSAttributedString {
-        let followingText = NSMutableAttributedString(string: "Following: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        followingText.append(NSAttributedString(string: "\(user.following ?? 0)"))
-        return followingText
+    var following: Int {
+        return user.following ?? 0
     }
     
     var bioText: NSAttributedString? {
@@ -38,6 +38,13 @@ class UserDetailsViewModel {
         let bioText = NSMutableAttributedString(string: "Bio: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
         bioText.append(NSAttributedString(string: bio))
         return bioText
+    }
+    
+    var login: String? {
+        guard let login = user.login else {
+            return nil
+        }
+        return login
     }
     
     init(user: User) {

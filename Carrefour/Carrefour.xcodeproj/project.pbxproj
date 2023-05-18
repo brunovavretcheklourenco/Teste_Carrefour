@@ -377,7 +377,6 @@
 				D6EF100A2A12D3F5008C384F /* Sources */,
 				D6EF100B2A12D3F5008C384F /* Frameworks */,
 				D6EF100C2A12D3F5008C384F /* Resources */,
-				13878696B4099934F1042D2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -479,23 +478,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13878696B4099934F1042D2D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarrefourTests/Pods-CarrefourTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarrefourTests/Pods-CarrefourTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarrefourTests/Pods-CarrefourTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5A396213C2584485DD2EF519 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

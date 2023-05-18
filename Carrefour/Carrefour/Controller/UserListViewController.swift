@@ -137,13 +137,16 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedUser = users[indexPath.row]
         showUserDetails(selectedUser)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     private func showUserDetails(_ user: User) {
         viewModel.getUserDetails(for: user) { [weak self] userDetails, error in
             if let userDetails = userDetails {
                 DispatchQueue.main.async {
-                    let userDetailsViewController = UserDetailsViewController(user: userDetails)
+                    let apiManager = GitHubAPI()
+                    let viewModel = UserDetailsViewModel(user: userDetails)
+                    let userDetailsViewController = UserDetailsViewController(viewModel: viewModel, apiManager: apiManager)
                     self?.navigationController?.pushViewController(userDetailsViewController, animated: true)
                 }
             } else if let error = error {
@@ -151,6 +154,7 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
     }
+
     
 }
 

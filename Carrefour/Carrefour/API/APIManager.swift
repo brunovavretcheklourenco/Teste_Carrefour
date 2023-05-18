@@ -35,12 +35,13 @@ class GitHubAPI: GitHubAPIProtocol {
         }
     }
     
+    //Não utilizado
     func searchUsers(query: String, completion: @escaping ([User]?, Error?) -> Void) {
         let url = GitHubAPI.baseURL + "/search/users"
         let parameters: [String: Any] = [
             "q": query
         ]
-        
+
         session.request(url, parameters: parameters).responseDecodable(of: SearchResult.self) { response in
             switch response.result {
             case .success(let result):
