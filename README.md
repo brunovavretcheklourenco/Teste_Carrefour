@@ -20,5 +20,7 @@ TODO:
 
 - Textos em arquivos de string
 
+- Organizar pastas de acordo com a arquitetura adotada
+
 - Modularização de algumas camadas: Networking, Constraints, UI, Regras de negócio...
 
