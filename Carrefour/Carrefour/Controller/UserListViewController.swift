@@ -32,10 +32,10 @@ class UserListViewController: UIViewController {
     private var users: [User] = []
     private var allUsers: [User] = []
     
-    private let api: GitHubAPIProtocol
+    private let viewModel: UserListViewModel
     
-    init(api: GitHubAPIProtocol = GitHubAPI()) {
-        self.api = api
+    init(viewModel: UserListViewModel = UserListViewModel()) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -104,20 +104,18 @@ class UserListViewController: UIViewController {
     private func getAllUsers() {
         showLoadingOverlay()
         
-        DispatchQueue.global().async { [weak self] in
-            self?.api.getUsers { [weak self] users, error in
-                if let error = error {
-                    DispatchQueue.main.async {
-                        print("Error: \(error)")
-                        self?.hideLoadingOverlay()
-                    }
-                } else if let users = users {
-                    DispatchQueue.main.async {
-                        self?.users = users
-                        self?.allUsers = users
-                        self?.tableView.reloadData()
-                        self?.hideLoadingOverlay()
-                    }
+        viewModel.getUsers { [weak self] users, error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Error: \(error)")
+                    self?.hideLoadingOverlay()
+                }
+            } else if let users = users {
+                DispatchQueue.main.async {
+                    self?.users = users
+                    self?.allUsers = users
+                    self?.tableView.reloadData()
+                    self?.hideLoadingOverlay()
                 }
             }
         }
@@ -142,18 +140,18 @@ extension UserListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     private func showUserDetails(_ user: User) {
-        self.api.getUser(username: user.login ?? "") { [weak self] userDetails, error in
+        viewModel.getUserDetails(for: user) { [weak self] userDetails, error in
             if let userDetails = userDetails {
                 DispatchQueue.main.async {
                     let userDetailsViewController = UserDetailsViewController(user: userDetails)
                     self?.navigationController?.pushViewController(userDetailsViewController, animated: true)
                 }
             } else if let error = error {
-                // Handle the error appropriately
+                print(error.localizedDescription)
             }
         }
     }
-
+    
 }
 
 extension UserListViewController: UISearchBarDelegate {

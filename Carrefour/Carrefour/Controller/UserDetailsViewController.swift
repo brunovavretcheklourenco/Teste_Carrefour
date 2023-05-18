@@ -9,13 +9,47 @@ import Foundation
 import UIKit
 
 class UserDetailsViewController: UIViewController {
-    
-    var user: User
+    private var viewModel: UserDetailsViewModel
     
     private var overlayLoadingView: OverlayLoadingView?
     
+    private let avatarImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = true
+        return imageView
+    }()
+    
+    private lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var followersLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var followingLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    private lazy var bioLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     init(user: User) {
-        self.user = user
+        self.viewModel = UserDetailsViewModel(user: user)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -23,17 +57,17 @@ class UserDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()        
-        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
-        avatarImageView.clipsToBounds = true
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.view.backgroundColor = .white
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
         setupUI()
         loadImage()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
+        avatarImageView.clipsToBounds = true
     }
     
     private func setupUI() {
@@ -44,13 +78,6 @@ class UserDetailsViewController: UIViewController {
         addFollowingLabel()
         addBioLabel()
     }
-    
-    private let avatarImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.masksToBounds = true
-        return imageView
-    }()
     
     private func addAvatarImageView() {
         view.addSubview(avatarImageView)
@@ -78,58 +105,6 @@ class UserDetailsViewController: UIViewController {
         }
     }
     
-    private lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        
-        let nameText = NSMutableAttributedString(string: "Name: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        if let name = user.name {
-            nameText.append(NSAttributedString(string: name))
-        }
-        label.attributedText = nameText
-        
-        return label
-    }()
-    
-    private lazy var followersLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        
-        let followersText = NSMutableAttributedString(string: "Followers: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        followersText.append(NSAttributedString(string: "\(user.followers ?? 0)"))
-        label.attributedText = followersText
-        
-        return label
-    }()
-    
-    private lazy var followingLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        
-        let followingText = NSMutableAttributedString(string: "Following: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        followingText.append(NSAttributedString(string: "\(user.following ?? 0)"))
-        label.attributedText = followingText
-        
-        return label
-    }()
-    
-    private lazy var bioLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.numberOfLines = 0
-        
-        let bioText = NSMutableAttributedString(string: "Bio: ", attributes: [.font: UIFont.boldSystemFont(ofSize: 16)])
-        if let bio = user.bio {
-            bioText.append(NSAttributedString(string: bio))
-        }
-        label.attributedText = bioText
-        
-        return label
-    }()
-    
     private func addNameLabel() {
         view.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -138,6 +113,8 @@ class UserDetailsViewController: UIViewController {
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 20)
         ])
+        
+        nameLabel.attributedText = viewModel.nameText
     }
     
     private func addFollowersLabel() {
@@ -148,6 +125,8 @@ class UserDetailsViewController: UIViewController {
             followersLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             followersLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20)
         ])
+        
+        followersLabel.attributedText = viewModel.followersText
     }
     
     private func addFollowingLabel() {
@@ -158,6 +137,8 @@ class UserDetailsViewController: UIViewController {
             followingLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             followingLabel.topAnchor.constraint(equalTo: followersLabel.bottomAnchor, constant: 20)
         ])
+        
+        followingLabel.attributedText = viewModel.followingText
     }
     
     private func addBioLabel() {
@@ -169,15 +150,13 @@ class UserDetailsViewController: UIViewController {
             bioLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             bioLabel.topAnchor.constraint(equalTo: followingLabel.bottomAnchor, constant: 20)
         ])
+        
+        bioLabel.attributedText = viewModel.bioText
     }
     
     private func loadImage() {
-        guard let avatarURLString = user.avatar_url, let avatarURL = URL(string: avatarURLString) else {
-            return
-        }
-        
-        DispatchQueue.global().async { [weak self] in
-            if let imageData = try? Data(contentsOf: avatarURL), let image = UIImage(data: imageData) {
+        viewModel.loadImage { [weak self] image in
+            if let image = image {
                 DispatchQueue.main.async {
                     self?.avatarImageView.image = image
                     self?.overlayLoadingView?.stopLoading()

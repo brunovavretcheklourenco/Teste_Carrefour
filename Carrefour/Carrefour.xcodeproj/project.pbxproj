@@ -34,6 +34,8 @@
 		D6F8914D2A1585B800EB44E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8914C2A1585B800EB44E2 /* User.swift */; };
 		D6F8914F2A1585CA00EB44E2 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8914E2A1585CA00EB44E2 /* Repository.swift */; };
 		D6F891512A1585D900EB44E2 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F891502A1585D900EB44E2 /* SearchResult.swift */; };
+		D6F8915C2A15D4EB00EB44E2 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8915B2A15D4EB00EB44E2 /* UserDetailsViewModel.swift */; };
+		D6F8915E2A15D75E00EB44E2 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F8915D2A15D75E00EB44E2 /* UserListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		D6F8914C2A1585B800EB44E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6F8914E2A1585CA00EB44E2 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		D6F891502A1585D900EB44E2 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D6F8915B2A15D4EB00EB44E2 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
+		D6F8915D2A15D75E00EB44E2 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +192,6 @@
 				D6F8912C2A13C86700EB44E2 /* UIKit */,
 				D6F891202A13C3F700EB44E2 /* XIB */,
 				D6F8911F2A13C3CD00EB44E2 /* Model */,
-				D6F8911E2A13C3C600EB44E2 /* ViewModel */,
 				D6F8911D2A13C3BF00EB44E2 /* Controller */,
 				D66494EE2A12DBEC009FA57D /* Coordinator */,
 				D6F891192A13C33000EB44E2 /* AppDelegate */,
@@ -227,18 +230,12 @@
 		D6F8911D2A13C3BF00EB44E2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D6F891582A15CFA000EB44E2 /* ViewModel */,
 				D6EF0FFF2A12D3F4008C384F /* MainViewController.swift */,
 				D6F891472A1546AA00EB44E2 /* UserListViewController.swift */,
 				D6F891492A157FCE00EB44E2 /* UserDetailsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		D6F8911E2A13C3C600EB44E2 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D6F8911F2A13C3CD00EB44E2 /* Model */ = {
@@ -338,6 +335,16 @@
 				D6F891502A1585D900EB44E2 /* SearchResult.swift */,
 			);
 			path = UserDataModels;
+			sourceTree = "<group>";
+		};
+		D6F891582A15CFA000EB44E2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D6F8915B2A15D4EB00EB44E2 /* UserDetailsViewModel.swift */,
+				D6F8915D2A15D75E00EB44E2 /* UserListViewModel.swift */,
+			);
+			name = ViewModel;
+			path = ../ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -602,6 +609,7 @@
 				D6F891242A13C5F200EB44E2 /* InitCoordinator.swift in Sources */,
 				D6F891222A13C4FC00EB44E2 /* AppDelegate.swift in Sources */,
 				D6F891482A1546AA00EB44E2 /* UserListViewController.swift in Sources */,
+				D6F8915C2A15D4EB00EB44E2 /* UserDetailsViewModel.swift in Sources */,
 				D6F891402A14260800EB44E2 /* ViewCodeProtocol.swift in Sources */,
 				D6F8914D2A1585B800EB44E2 /* User.swift in Sources */,
 				D6F891462A151E0E00EB44E2 /* APIManager.swift in Sources */,
@@ -611,6 +619,7 @@
 				D6EF10002A12D3F4008C384F /* MainViewController.swift in Sources */,
 				D6F8911B2A13C34200EB44E2 /* AppDelegate+Launch.swift in Sources */,
 				D6F8913C2A14258500EB44E2 /* OverlayLoadingView.swift in Sources */,
+				D6F8915E2A15D75E00EB44E2 /* UserListViewModel.swift in Sources */,
 				D6F891392A14087400EB44E2 /* CoordinatorFactory.swift in Sources */,
 				D6F8914A2A157FCE00EB44E2 /* UserDetailsViewController.swift in Sources */,
 				D6F891282A13C64700EB44E2 /* Coordinator.swift in Sources */,
