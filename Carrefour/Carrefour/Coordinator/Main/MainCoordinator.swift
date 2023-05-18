@@ -1,10 +1,3 @@
-//
-//  MainCoordinator.swift
-//  Carrefour
-//
-//  Created by exactaworks on 16/05/23.
-//
-
 import Foundation
 import UIKit
 
@@ -13,13 +6,16 @@ public protocol MainCoordinatorProtocol: Coordinator {
 }
 
 public class MainCoordinator: MainCoordinatorProtocol {
-
+    public func start(animated: Bool) {
+        
+    }
+    
     public var nextCoordinator: Coordinator?
     public var currentViewController: UIViewController?
     public var presentingViewController: UINavigationController
-
+    
     let homeCoordinator: HomeCoordinatorProtocol
-
+    
     public init(
         presentingViewController: UINavigationController,
         homeCoordinator: HomeCoordinatorProtocol
@@ -27,25 +23,18 @@ public class MainCoordinator: MainCoordinatorProtocol {
         self.presentingViewController = presentingViewController
         self.homeCoordinator = homeCoordinator
     }
-
-    public func start(animated: Bool) {
-        startAppCommonFlow()
-    }
-
+    
     public func start() {
         startAppFlow()
     }
-
-    public func startAppCommonFlow() {}
-
-    func startAppFlow() {
+    
+    private func startAppFlow() {
         DispatchQueue.main.async {
             self.startAppCommonFlow()
         }
     }
-
-    func startLogin() {
+    
+    private func startAppCommonFlow() {
         homeCoordinator.showHome()
-      //  nextCoordinator = loginCoordinator
     }
 }

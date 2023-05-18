@@ -19,7 +19,7 @@ public final class InitCoordinator {
 
     private lazy var initViewController: MainViewController = {
         //let viewModel = InitViewModel(coordinator: self)
-        
+
         let initViewController = MainViewController()
         
         return initViewController
@@ -35,7 +35,6 @@ public final class InitCoordinator {
     ) {
         self.window = window
         self.presentingViewController = presentingViewController
-        
     }
 
     private func startApp() {
@@ -45,13 +44,21 @@ public final class InitCoordinator {
 }
 
 extension InitCoordinator: InitCoordinatorProtocol {
-    public func start() {}
-    
-
     public func start(animated: Bool) {
         window?.rootViewController = initViewController
         window?.makeKeyAndVisible()
         startApp()
+
+        let mainViewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: mainViewController)
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
+
+        mainCoordinator?.start()
     }
 
+
+    public func start() {
+      
+    }
 }

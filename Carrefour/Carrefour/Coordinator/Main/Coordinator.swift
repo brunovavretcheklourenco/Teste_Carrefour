@@ -1,10 +1,3 @@
-//
-//  Coordinator.swift
-//  Carrefour
-//
-//  Created by exactaworks on 16/05/23.
-//
-
 import UIKit
 import Foundation
 
@@ -16,9 +9,13 @@ public protocol Coordinator: AnyObject {
 }
 
 extension Coordinator {
-
     public func start() {
         start(animated: true)
     }
+}
 
+public extension Coordinator {
+    var currentViewController: UIViewController? {
+        return nil
+    }
 }
